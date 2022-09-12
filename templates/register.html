@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../templates/register.css">
+    <style>
+        body{
+    background-color: cyan;
+    background-image: url("../static/assets/child.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+}
+h1{
+    color: black;
+    font: historical-ligatures;
+}
+    </style>
+
+</head>
+<body>
+<h1><i>Little Green Foundation</i></h1>
+<div class="row">
+    <div class="col-3"></div>
+<div class="col-6">
+    <h3 class="text-info text-center"> Register here</h3>
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    {% endwith %}
+    <form action="" method="post">
+        <input name="x" class="form-control" type="text" placeholder="Enter name"> <br><br>
+        <input name="y" class="form-control" type="email" placeholder="Enter email"> <br><br>
+        <input name="z" class="form-control" type="password" placeholder="Enter password"> <br><br>
+        <input class="btn btn-outline-info btn-block" type="submit" value="Register"> <br><br>
+        <a class="btn btn-outline-success btn-block" href="/login">login</a>
+    </form>
+
+</div>
+<div class="col-3"></div>
+</div>
+</body>
+</html>

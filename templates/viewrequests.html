@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <style>
+        body{
+background-color: cyan;
+             background-image: url("../static/assets/newupdate.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+}
+h1{
+    color: black;
+}
+    </style>
+
+</head>
+<body>
+<a class="btn btn-outline-secondary btn-block" href="/">register</a>
+<h1>Welcome {{ session["name"] }}</h1>
+<table class="table table-hover table-dark">
+    <tr>
+        <th>Request</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    {% for request in requests %}
+       <tr>
+        <td>{{ request.content }}</td>
+        <td><a class="btn btn-danger" href="">Delete</a></td>
+        <td><a class="btn btn-info" href="">Update</a></td>
+       </tr>
+    {% endfor %}
+</table>
+<a href="/about" class="btn btn-outline-info">About</a>
+</body>
+</html>
